@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Cross-Archive Provenance Audit"
+type: software
+authors:
+  - family-names: "Jana"
+    given-names: "Biswajit"
+version: 0.1.0
+date-released: 2026-08-28
+url: "https://github.com/Biswajit1999/cross-archive-provenance"
+license: MIT
+keywords:
+  - astroinformatics
+  - provenance
+  - exoplanets
+  - astrophysics
+references:
+  - type: data
+    authors:
+      - name: "NASA Exoplanet Archive"
+    title: "Planetary Systems Composite Parameters (pscomppars)"
+  - type: data
+    authors:
+      - name: "CDS, Strasbourg"
+    title: "SIMBAD Astronomical Database"

@@ -1,0 +1,9 @@
+{
+  "n_queried": 293,
+  "n_resolved_in_simbad": 268,
+  "resolution_rate": 0.9146757679180887,
+  "n_within_match_radius": 255,
+  "fraction_within_match_radius_of_resolved": 0.9514925373134329,
+  "median_separation_arcsec": 0.2789556075497324,
+  "max_separation_arcsec": 20.078151146192177
+}

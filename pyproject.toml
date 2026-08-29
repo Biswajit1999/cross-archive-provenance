@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "provenance"
-version = "0.1.0"
+version = "0.2.0"
 description = "Cross-archive identifier-resolution and positional provenance consistency audit between the NASA Exoplanet Archive and SIMBAD for real confirmed exoplanet host stars."
 readme = "README.md"
 requires-python = ">=3.10"

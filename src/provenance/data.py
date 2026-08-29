@@ -31,6 +31,20 @@ NEA_QUERY = (
 SIMBAD_TAP_SYNC = "https://simbad.u-strasbg.fr/simbad/sim-tap/sync"
 
 
+class SimbadQueryError(Exception):
+    """Raised when a SIMBAD query could not be completed (network error,
+    timeout, or a malformed/error response) -- distinct from a query that
+    completed and genuinely found no match. An earlier version of
+    ``resolve_in_simbad`` caught every exception and returned ``None`` for
+    all of them, silently conflating "this object has no SIMBAD entry"
+    (a real astrophysical result) with "the query itself failed" (an
+    external review, Codex, flagged this as a correctness bug, since it
+    can inflate or deflate the unresolved-name count depending on
+    unrelated network conditions during a given run). Callers that want
+    to retry transient failures should catch this specifically -- see
+    ``cli.py::_resolve_with_retries``."""
+
+
 @dataclass(frozen=True)
 class CachePaths:
     cache_dir: Path
@@ -70,7 +84,13 @@ def resolve_in_simbad(name: str) -> dict | None:
     """Resolve a real host-star name to a SIMBAD main_id + position via
     the identifier-alias table (``ident`` joined to ``basic``), the
     standard robust SIMBAD name-resolution pattern (a name may be an
-    alias, not the ``main_id`` itself)."""
+    alias, not the ``main_id`` itself).
+
+    Returns a match dict, or ``None`` if the query completed and SIMBAD
+    genuinely returned no match. Raises ``SimbadQueryError`` if the query
+    could not be completed at all (network error, timeout, or a
+    malformed/error response) -- see that class's docstring for why this
+    distinction matters."""
     query = (
         "SELECT b.main_id, b.ra, b.dec FROM ident i JOIN basic b ON i.oidref=b.oid "
         f"WHERE i.id = '{name.replace(chr(39), '')}'"
@@ -80,17 +100,17 @@ def resolve_in_simbad(name: str) -> dict | None:
     try:
         with urllib.request.urlopen(url, timeout=20) as resp:
             raw = resp.read().decode("utf-8")
-    except Exception:  # noqa: BLE001 - any network/service failure means "could not resolve"
-        return None
+    except Exception as exc:
+        raise SimbadQueryError(f"SIMBAD query failed for {name!r}: {exc}") from exc
 
-    lines = [l for l in raw.splitlines() if l.strip()]
+    lines = [line for line in raw.splitlines() if line.strip()]
     if len(lines) < 2:
-        return None
+        return None  # query completed successfully; zero data rows means genuinely not found
     import csv as _csv
     row = next(_csv.reader([lines[1]]))
     if len(row) < 3:
-        return None
+        raise SimbadQueryError(f"Malformed SIMBAD response for {name!r}: {row!r}")
     try:
         return {"simbad_main_id": row[0], "simbad_ra": float(row[1]), "simbad_dec": float(row[2])}
-    except ValueError:
-        return None
+    except ValueError as exc:
+        raise SimbadQueryError(f"Malformed SIMBAD response for {name!r}: {row!r}") from exc

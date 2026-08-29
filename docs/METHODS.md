@@ -24,7 +24,12 @@ positional-agreement fraction, and whether H0 is rejected.
 2. **Cross-archive resolution** (`data.py::resolve_in_simbad`): for each
    host name, a live SIMBAD identifier-alias query, following the
    standard robust name-resolution pattern (join `ident` to `basic`
-   rather than requiring an exact `main_id` match).
+   rather than requiring an exact `main_id` match). A query that fails to
+   complete (network error, timeout, malformed response) raises
+   `SimbadQueryError` rather than being treated as "not found";
+   `cli.py::_resolve_with_retries` retries such failures up to twice
+   before recording them separately as `query_failed`, excluded from
+   both the resolved and not-found counts (`docs/LIMITATIONS.md`).
 3. **Positional consistency** (`crossmatch.py`): exact (haversine)
    angular separation between the two archives' independently maintained
    positions for the same resolved object, and a fixed match-radius

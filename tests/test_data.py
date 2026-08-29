@@ -14,6 +14,25 @@ def test_nea_query_template_is_valid_adql_shape():
     assert "top 10" in q.lower()
 
 
+def test_resolve_in_simbad_raises_on_network_failure_not_returns_none(monkeypatch):
+    """Regression test: an earlier version caught every exception in
+    resolve_in_simbad and returned None, indistinguishable from a
+    genuine "not found in SIMBAD" result -- an external review (Codex)
+    flagged this as a correctness bug, since it silently lets network
+    conditions during a run change the reported unresolved-name count.
+    A network failure should now raise SimbadQueryError instead."""
+    import urllib.request
+
+    from provenance.data import SimbadQueryError, resolve_in_simbad
+
+    def raise_timeout(*args, **kwargs):
+        raise TimeoutError("simulated network failure")
+
+    monkeypatch.setattr(urllib.request, "urlopen", raise_timeout)
+    with pytest.raises(SimbadQueryError):
+        resolve_in_simbad("HD 209458")
+
+
 @pytest.mark.network
 def test_live_load_host_stars(tmp_path):
     from provenance.data import load_host_stars

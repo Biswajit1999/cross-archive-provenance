@@ -4,8 +4,12 @@
   "n_resolved_in_simbad": 268,
   "n_not_found_in_simbad": 25,
   "resolution_rate": 0.9146757679180887,
+  "resolution_rate_ci95_low": 0.8770793819548208,
+  "resolution_rate_ci95_high": 0.941539422053898,
   "n_within_match_radius": 255,
   "fraction_within_match_radius_of_resolved": 0.9514925373134329,
+  "fraction_within_match_radius_ci95_low": 0.9187888813102917,
+  "fraction_within_match_radius_ci95_high": 0.9714358881190931,
   "median_separation_arcsec": 0.2789556075497324,
   "max_separation_arcsec": 20.078151146192177
 }

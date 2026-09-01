@@ -30,6 +30,7 @@ def test_summarize_crossmatch_all_resolved_within_radius():
     result = summarize_crossmatch(df, match_radius_arcsec=5.0)
     assert result["n_queried"] == 2
     assert result["resolution_rate"] == 1.0
+    assert result["resolution_rate_ci95_low"] < 1.0
     assert result["n_within_match_radius"] == 2
 
 
@@ -74,3 +75,12 @@ def test_summarize_crossmatch_excludes_query_failures_from_resolution_rate():
     assert result["n_resolved_in_simbad"] == 1
     assert result["n_not_found_in_simbad"] == 1
     assert result["resolution_rate"] == pytest.approx(0.5)  # 1/(1+1), the query_failed row excluded
+
+
+def test_summarize_rejects_unknown_status():
+    df = pd.DataFrame({
+        "ra": [1.0], "dec": [1.0], "simbad_ra": [1.0], "simbad_dec": [1.0],
+        "resolution_status": ["timeout"],
+    })
+    with pytest.raises(ValueError):
+        summarize_crossmatch(df)

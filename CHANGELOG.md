@@ -3,6 +3,12 @@
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-09-01
+
+- Add Wilson 95% intervals for exact-name resolution and positional agreement.
+- Reject undocumented resolution-status values and invalid match radii.
+- Update the committed summary with interval endpoints.
+
 ## [0.2.0] - 2026-08-29
 
 Fixes for issues raised by an external review (Codex); no repository

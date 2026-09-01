@@ -6,6 +6,16 @@ import numpy as np
 import pandas as pd
 
 
+def wilson_interval(successes: int, trials: int, z: float = 1.959963984540054) -> tuple[float, float]:
+    if trials <= 0 or not 0 <= successes <= trials:
+        raise ValueError("require 0 <= successes <= trials and trials > 0")
+    p = successes / trials
+    denominator = 1 + z**2 / trials
+    centre = (p + z**2 / (2 * trials)) / denominator
+    half_width = z * ((p * (1 - p) / trials + z**2 / (4 * trials**2)) ** 0.5) / denominator
+    return max(0.0, centre - half_width), min(1.0, centre + half_width)
+
+
 def angular_separation_arcsec(ra1, dec1, ra2, dec2) -> float:
     """Exact great-circle (haversine) angular separation, arcsec -- unlike
     the flat-sky approximation used in some other projects in this
@@ -35,6 +45,12 @@ def summarize_crossmatch(df: pd.DataFrame, match_radius_arcsec: float = 5.0) -> 
     reported separately so a reader can see how many names this run
     could not determine an answer for at all.
     """
+    if match_radius_arcsec < 0:
+        raise ValueError("match_radius_arcsec must be non-negative")
+    allowed = {"resolved", "not_found", "query_failed"}
+    unexpected = set(df["resolution_status"].dropna()) - allowed
+    if unexpected or df["resolution_status"].isna().any():
+        raise ValueError(f"unexpected resolution_status values: {sorted(unexpected)}")
     n = len(df)
     n_resolved = int((df["resolution_status"] == "resolved").sum())
     n_not_found = int((df["resolution_status"] == "not_found").sum())
@@ -49,16 +65,22 @@ def summarize_crossmatch(df: pd.DataFrame, match_radius_arcsec: float = 5.0) -> 
     seps = np.array(seps)
     n_within_radius = int(np.sum(seps <= match_radius_arcsec)) if seps.size else 0
 
+    resolution_ci = wilson_interval(n_resolved, n_queryable) if n_queryable else (float("nan"), float("nan"))
+    position_ci = wilson_interval(n_within_radius, n_resolved) if n_resolved else (float("nan"), float("nan"))
     return {
         "n_queried": n,
         "n_query_failed": n_query_failed,
         "n_resolved_in_simbad": n_resolved,
         "n_not_found_in_simbad": n_not_found,
         "resolution_rate": n_resolved / n_queryable if n_queryable else float("nan"),
+        "resolution_rate_ci95_low": resolution_ci[0],
+        "resolution_rate_ci95_high": resolution_ci[1],
         "n_within_match_radius": n_within_radius,
         "fraction_within_match_radius_of_resolved": (
             n_within_radius / n_resolved if n_resolved else float("nan")
         ),
+        "fraction_within_match_radius_ci95_low": position_ci[0],
+        "fraction_within_match_radius_ci95_high": position_ci[1],
         "median_separation_arcsec": float(np.median(seps)) if seps.size else float("nan"),
         "max_separation_arcsec": float(np.max(seps)) if seps.size else float("nan"),
     }

@@ -1,4 +1,4 @@
-# Cross-Archive Provenance Audit: Methods and Results (v0.2.0)
+# Cross-Archive Provenance Audit: Methods and Results (v0.3.0)
 
 **Author**: Biswajit Jana
 

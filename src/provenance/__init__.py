@@ -9,4 +9,4 @@ downstream user trust that two archives are talking about the same
 object, at the same position?"
 """
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"

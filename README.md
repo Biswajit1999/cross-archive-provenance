@@ -57,6 +57,11 @@ GJ 3021, GJ 328, GJ 674) that did not match the actual sorted
 `results/default/unresolved_hosts.csv` and `position_discrepancies.csv`
 for the specific flagged objects.
 
+The [Gaia DR3 proper-motion validation](docs/GAIA_PROPER_MOTION_VALIDATION.md)
+now tests the epoch explanation for all 13 flagged hosts using real Gaia
+archive records, a predeclared 16-year propagation, a fitted implied epoch
+span, candidate-ambiguity margins and Gaia-only propagated uncertainties.
+
 ## What changed in v0.2.0
 
 `resolve_in_simbad` used to catch every exception (network error,

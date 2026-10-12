@@ -34,11 +34,12 @@ earlier version of this document listed a different four objects (GJ
 likely explanation for all of these is genuine **proper motion**: nearby,
 fast-moving stars have measurably different apparent positions depending
 on the observation epoch each archive's position is quoted at, not a
-data-entry error in either archive. This project does not fetch or
-subtract proper motion (e.g. from Gaia) to test this explanation directly
--- doing so is a natural, real follow-up (tracked as a repository issue)
-that would let this project distinguish "epoch-difference-explained" from
-"genuinely discrepant" position mismatches.
+data-entry error in either archive. The Gaia DR3 follow-up now tests this
+explanation for the 12 of 13 flagged hosts with a plausible nearest Gaia
+motion; see `GAIA_PROPER_MOTION_VALIDATION.md`. PSR B1257+12 has no
+plausible Gaia motion match under the declared gate and remains unvalidated.
+Exact archive reference epochs and complete archive covariances are still
+unavailable, so the test does not adjudicate either archive's coordinates.
 
 ## Network failures were silently miscounted as "not found" (fixed in v0.2.0)
 

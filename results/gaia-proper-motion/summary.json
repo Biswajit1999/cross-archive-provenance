@@ -1,0 +1,10 @@
+{
+  "data_kind": "real NEA, SIMBAD, and Gaia DR3 archive products",
+  "n_flagged": 13,
+  "n_with_plausible_gaia_motion": 12,
+  "n_fixed_16yr_residual_below_1_arcsec": 12,
+  "median_implied_epoch_span_years": 15.499927480115776,
+  "median_offset_explained_fraction": 0.967737096706871,
+  "maximum_fixed_16yr_residual_arcsec": 0.6476634296934554,
+  "limitations": "A Gaia motion is accepted only when the nearest candidate lies within 1 arcsec of the NEA position and has finite proper motion. A large nearest/second candidate margin is evidence against confusion, not an identifier proof. The uncertainty column propagates Gaia errors only; NEA/SIMBAD coordinate errors and their exact reference epochs are unavailable here, so no full significance is claimed."
+}

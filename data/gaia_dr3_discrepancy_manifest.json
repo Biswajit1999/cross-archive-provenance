@@ -1,0 +1,76 @@
+{
+  "archive": "ESA Gaia Archive",
+  "release_table": "gaiadr3.gaia_source",
+  "endpoint": "https://gea.esac.esa.int/tap-server/tap/sync",
+  "accessed_utc": "2026-10-12T13:36:39Z",
+  "input": "results/default/position_discrepancies.csv",
+  "output_sha256": "90342b62ea1a113ac7addcb74c0ebc456d03ec90c16c1ee62ad5c18a5eebf7d9",
+  "cone_radius_arcsec": 30,
+  "queries": [
+    {
+      "hostname": "GJ 1061",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',54.0032486000,-44.5143104000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',54.0032486000,-44.5143104000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 1
+    },
+    {
+      "hostname": "GJ 3021",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',4.0634323000,-79.8514218000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',4.0634323000,-79.8514218000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 2
+    },
+    {
+      "hostname": "GJ 328",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',133.7819507000,1.5420011000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',133.7819507000,1.5420011000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 3
+    },
+    {
+      "hostname": "GJ 674",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',262.1700476000,-46.8989826000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',262.1700476000,-46.8989826000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 5
+    },
+    {
+      "hostname": "GJ 876",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',343.3239737000,-14.2665958000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',343.3239737000,-14.2665958000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 1
+    },
+    {
+      "hostname": "HD 285968",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',70.7353853000,18.9533580000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',70.7353853000,18.9533580000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 3
+    },
+    {
+      "hostname": "HD 69830",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',124.6010091000,-12.6364246000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',124.6010091000,-12.6364246000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 5
+    },
+    {
+      "hostname": "L 363-38",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',10.8555443000,-41.2952926000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',10.8555443000,-41.2952926000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 1
+    },
+    {
+      "hostname": "PSR B1257+12",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',195.0149029000,12.6823534000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',195.0149029000,12.6823534000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 1
+    },
+    {
+      "hostname": "TOI-4527",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',19.4722574000,5.4711996000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',19.4722574000,5.4711996000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 2
+    },
+    {
+      "hostname": "TOI-5720",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',170.3135774000,25.2732942000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',170.3135774000,25.2732942000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 1
+    },
+    {
+      "hostname": "TOI-5789",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',302.7734475000,16.1897138000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',302.7734475000,16.1897138000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 5
+    },
+    {
+      "hostname": "ups And",
+      "query": "SELECT TOP 5 source_id,ra,dec,pmra,pmdec,ref_epoch,ra_error,dec_error,pmra_error,pmdec_error,ra_pmra_corr,dec_pmdec_corr,phot_g_mean_mag,DISTANCE(POINT('ICRS',ra,dec),POINT('ICRS',24.1983534000,41.4038147000)) AS target_distance_deg FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',24.1983534000,41.4038147000,0.0083333333)) ORDER BY target_distance_deg",
+      "rows": 1
+    }
+  ]
+}

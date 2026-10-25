@@ -8,7 +8,7 @@ from __future__ import annotations
 import math
 import re
 from dataclasses import dataclass
-from typing import Callable
+from collections.abc import Callable
 
 from .crossmatch import angular_separation_arcsec
 from .data import SimbadQueryError
@@ -81,7 +81,7 @@ def audit_aliases(
         if not mid.strip() or not math.isfinite(sep):
             raise SimbadQueryError(f"invalid alias coordinates/ID for {candidate!r}")
         found.append((mid, float(sep)))
-    base = dict(original_name=name, candidates=variants, attempted=tuple(attempted))
+    base = {"original_name": name, "candidates": variants, "attempted": tuple(attempted)}
     if failed:
         return AliasAudit(**base, status="query_failed", reason="at least one alias query failed")
     if not found:

@@ -7,8 +7,8 @@ from __future__ import annotations
 
 import math
 import re
-from dataclasses import dataclass
 from collections.abc import Callable
+from dataclasses import dataclass
 
 from .crossmatch import angular_separation_arcsec
 from .data import SimbadQueryError

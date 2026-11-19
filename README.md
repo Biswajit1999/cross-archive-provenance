@@ -11,6 +11,12 @@ Exoplanet Archive and cross-matches each one, live, against SIMBAD --
 measuring name-resolution success rate and positional agreement, and
 flagging the specific objects where either fails.
 
+## Research evidence and downloads
+
+[Open the evidence browser file](evidence.html) for 15 selected files, including [`summary.json`](results/default/summary.json). Each file has a download link and SHA-256 digest. Serve this checkout with `python -m http.server` to view the static browser.
+
+Rebuild the inventory and browser with `python scripts/evidence_catalog.py` and `python scripts/render_evidence_page.py`.
+
 ## Quickstart
 
 ```bash

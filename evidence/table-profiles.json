@@ -1,0 +1,471 @@
+{
+  "schema": 1,
+  "project": "Cross-Archive Provenance Audit",
+  "tables": [
+    {
+      "path": "data/gaia_dr3_discrepancy_candidates.csv",
+      "label": "Gaia dr3 discrepancy candidates",
+      "role": "Data and provenance",
+      "rows": 31,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "source_id",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 3.480204827359301e+17,
+          "maximum": 5.95182412103248e+18
+        },
+        {
+          "name": "ra",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 4.062898388828774,
+          "maximum": 343.3241110018443
+        },
+        {
+          "name": "dec",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": -79.85142960812378,
+          "maximum": 41.4037617615712
+        },
+        {
+          "name": "pmra",
+          "blank": 3,
+          "text": 0,
+          "finite": 28,
+          "nonfinite": 0,
+          "minimum": -488.48710412561513,
+          "maximum": 957.7147312894218
+        },
+        {
+          "name": "pmdec",
+          "blank": 3,
+          "text": 0,
+          "finite": 28,
+          "nonfinite": 0,
+          "minimum": -1116.5935413672632,
+          "maximum": 398.48693437446804
+        },
+        {
+          "name": "ref_epoch",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 2016.0,
+          "maximum": 2016.0
+        },
+        {
+          "name": "ra_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 0.013468638,
+          "maximum": 14.649883
+        },
+        {
+          "name": "dec_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 0.0076536355,
+          "maximum": 13.810497
+        },
+        {
+          "name": "pmra_error",
+          "blank": 3,
+          "text": 0,
+          "finite": 28,
+          "nonfinite": 0,
+          "minimum": 0.01975179,
+          "maximum": 2.5317967
+        },
+        {
+          "name": "pmdec_error",
+          "blank": 3,
+          "text": 0,
+          "finite": 28,
+          "nonfinite": 0,
+          "minimum": 0.013001914,
+          "maximum": 1.3973708
+        },
+        {
+          "name": "ra_pmra_corr",
+          "blank": 3,
+          "text": 0,
+          "finite": 28,
+          "nonfinite": 0,
+          "minimum": -0.47756225,
+          "maximum": 0.42669442
+        },
+        {
+          "name": "dec_pmdec_corr",
+          "blank": 3,
+          "text": 0,
+          "finite": 28,
+          "nonfinite": 0,
+          "minimum": -0.56984293,
+          "maximum": 0.7576284
+        },
+        {
+          "name": "phot_g_mean_mag",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 3.966133,
+          "maximum": 21.033266
+        },
+        {
+          "name": "target_distance_deg",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 5.01546235442621e-05,
+          "maximum": 0.007677688829343221
+        },
+        {
+          "name": "hostname",
+          "blank": 0,
+          "text": 31,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "candidate_rank",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 1.0,
+          "maximum": 5.0
+        },
+        {
+          "name": "candidate_separation_arcsec",
+          "blank": 0,
+          "text": 0,
+          "finite": 31,
+          "nonfinite": 0,
+          "minimum": 0.18055663593688012,
+          "maximum": 27.639576238112742
+        }
+      ]
+    },
+    {
+      "path": "results/gaia-proper-motion/epoch_span_sensitivity.csv",
+      "label": "Epoch span sensitivity",
+      "role": "Tables and numerical results",
+      "rows": 161,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "epoch_span_years",
+          "blank": 0,
+          "text": 0,
+          "finite": 161,
+          "nonfinite": 0,
+          "minimum": 0.0,
+          "maximum": 20.0
+        },
+        {
+          "name": "median_residual_arcsec",
+          "blank": 0,
+          "text": 0,
+          "finite": 161,
+          "nonfinite": 0,
+          "minimum": 0.0002847691923320284,
+          "maximum": 12.353006226573669
+        },
+        {
+          "name": "maximum_residual_arcsec",
+          "blank": 0,
+          "text": 0,
+          "finite": 161,
+          "nonfinite": 0,
+          "minimum": 0.0009763357884848559,
+          "maximum": 20.078151148023068
+        }
+      ]
+    },
+    {
+      "path": "results/gaia-proper-motion/proper_motion_validation.csv",
+      "label": "Proper motion validation",
+      "role": "Tables and numerical results",
+      "rows": 13,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "hostname",
+          "blank": 0,
+          "text": 13,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_id",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": 3.480204827359301e+17,
+          "maximum": 5.951824121022278e+18
+        },
+        {
+          "name": "status",
+          "blank": 0,
+          "text": 13,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "original_separation_arcsec",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": 5.6083297755013,
+          "maximum": 20.078151148023068
+        },
+        {
+          "name": "gaia_total_pm_mas_per_year",
+          "blank": 1,
+          "text": 0,
+          "finite": 12,
+          "nonfinite": 0,
+          "minimum": 361.8048916036836,
+          "maximum": 1295.363410194817
+        },
+        {
+          "name": "implied_epoch_span_years",
+          "blank": 1,
+          "text": 0,
+          "finite": 12,
+          "nonfinite": 0,
+          "minimum": 15.499746994568637,
+          "maximum": 15.500978305035241
+        },
+        {
+          "name": "fixed_16yr_residual_arcsec",
+          "blank": 1,
+          "text": 0,
+          "finite": 12,
+          "nonfinite": 0,
+          "minimum": 0.18054849326689698,
+          "maximum": 0.6476634296934554
+        },
+        {
+          "name": "cross_track_residual_arcsec",
+          "blank": 1,
+          "text": 0,
+          "finite": 12,
+          "nonfinite": 0,
+          "minimum": 3.298071506478398e-05,
+          "maximum": 0.0009717842121106696
+        },
+        {
+          "name": "offset_explained_fraction",
+          "blank": 1,
+          "text": 0,
+          "finite": 12,
+          "nonfinite": 0,
+          "minimum": 0.9677250814146755,
+          "maximum": 0.9678070833039131
+        },
+        {
+          "name": "gaia_only_propagation_sigma_arcsec",
+          "blank": 1,
+          "text": 0,
+          "finite": 12,
+          "nonfinite": 0,
+          "minimum": 0.0003848161225157603,
+          "maximum": 0.004769877923872734
+        },
+        {
+          "name": "candidate_separation_arcsec",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": 0.1805566359368801,
+          "maximum": 26.732037658633104
+        },
+        {
+          "name": "candidate_margin_arcsec",
+          "blank": 6,
+          "text": 0,
+          "finite": 7,
+          "nonfinite": 0,
+          "minimum": 2.8136271810695,
+          "maximum": 12.932042456375873
+        }
+      ]
+    },
+    {
+      "path": "results/default/crossmatch_results.csv",
+      "label": "Crossmatch results",
+      "role": "Tables and numerical results",
+      "rows": 293,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "hostname",
+          "blank": 0,
+          "text": 293,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "ra",
+          "blank": 0,
+          "text": 0,
+          "finite": 293,
+          "nonfinite": 0,
+          "minimum": 3.9617073,
+          "maximum": 359.9749837
+        },
+        {
+          "name": "dec",
+          "blank": 0,
+          "text": 0,
+          "finite": 293,
+          "nonfinite": 0,
+          "minimum": -79.8514218,
+          "maximum": 70.5270835
+        },
+        {
+          "name": "resolved",
+          "blank": 0,
+          "text": 293,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "resolution_status",
+          "blank": 0,
+          "text": 293,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "simbad_main_id",
+          "blank": 25,
+          "text": 268,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "simbad_ra",
+          "blank": 25,
+          "text": 0,
+          "finite": 268,
+          "nonfinite": 0,
+          "minimum": 3.96169885931,
+          "maximum": 359.97429885304
+        },
+        {
+          "name": "simbad_dec",
+          "blank": 25,
+          "text": 0,
+          "finite": 268,
+          "nonfinite": 0,
+          "minimum": -79.85117902957778,
+          "maximum": 66.3087321038
+        }
+      ]
+    },
+    {
+      "path": "results/default/position_discrepancies.csv",
+      "label": "Position discrepancies",
+      "role": "Tables and numerical results",
+      "rows": 13,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "hostname",
+          "blank": 0,
+          "text": 13,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "ra",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": 4.0634323,
+          "maximum": 343.3239737
+        },
+        {
+          "name": "dec",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": -79.8514218,
+          "maximum": 41.4038147
+        },
+        {
+          "name": "resolved",
+          "blank": 0,
+          "text": 13,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "resolution_status",
+          "blank": 0,
+          "text": 13,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "simbad_main_id",
+          "blank": 0,
+          "text": 13,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "simbad_ra",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": 4.052825044784584,
+          "maximum": 343.31971909853587
+        },
+        {
+          "name": "simbad_dec",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": -79.85117902957778,
+          "maximum": 41.40545871334139
+        },
+        {
+          "name": "separation_arcsec",
+          "blank": 0,
+          "text": 0,
+          "finite": 13,
+          "nonfinite": 0,
+          "minimum": 5.6083297755913755,
+          "maximum": 20.078151146192177
+        }
+      ]
+    }
+  ],
+  "excluded": []
+}

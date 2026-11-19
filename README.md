@@ -13,6 +13,13 @@ flagging the specific objects where either fails.
 
 ## Research evidence and downloads
 
+
+- [Download the machine-readable table profiles](evidence/table-profiles.json) for 5 archived tables. Open `table-evidence.html` from the checkout for the coverage chart.
+- Start with [Summary](results/default/summary.json), [Summary](results/gaia-proper-motion/summary.json), [Epoch span sensitivity](results/gaia-proper-motion/epoch_span_sensitivity.csv).
+- [View Proper motion validation](results/gaia-proper-motion/proper_motion_validation.png).
+
+To rebuild the table profiles after rebuilding the evidence inventory, run `python scripts/profile_evidence_tables.py` followed by `python scripts/render_table_profiles.py`.
+
 [Open the evidence browser file](evidence.html) for 15 selected files, including [`summary.json`](results/default/summary.json). Each file has a download link and SHA-256 digest. Serve this checkout with `python -m http.server` to view the static browser.
 
 Rebuild the inventory and browser with `python scripts/evidence_catalog.py` and `python scripts/render_evidence_page.py`.

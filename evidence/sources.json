@@ -1,0 +1,81 @@
+{
+  "project": "Cross-Archive Provenance Audit",
+  "repository": "https://github.com/Biswajit1999/cross-archive-provenance",
+  "files": [
+    {
+      "label": "Data source notes",
+      "path": "data/README.md",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Project claims",
+      "path": "docs/CLAIMS.md",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Project data sources",
+      "path": "docs/DATA_SOURCES.md",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Project methods",
+      "path": "docs/METHODS.md",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Gaia dr3 discrepancy candidates",
+      "path": "data/gaia_dr3_discrepancy_candidates.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Gaia dr3 discrepancy manifest",
+      "path": "data/gaia_dr3_discrepancy_manifest.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Summary",
+      "path": "results/default/summary.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Summary",
+      "path": "results/gaia-proper-motion/summary.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Epoch span sensitivity",
+      "path": "results/gaia-proper-motion/epoch_span_sensitivity.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Proper motion validation",
+      "path": "results/gaia-proper-motion/proper_motion_validation.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Crossmatch results",
+      "path": "results/default/crossmatch_results.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Position discrepancies",
+      "path": "results/default/position_discrepancies.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Proper motion validation",
+      "path": "results/gaia-proper-motion/proper_motion_validation.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Resolution breakdown",
+      "path": "results/figures/resolution_breakdown.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Separation histogram",
+      "path": "results/figures/separation_histogram.png",
+      "role": "Figures"
+    }
+  ]
+}
